@@ -1,21 +1,21 @@
-def test(first_right, first_left, second_right, second_left):
-    first_right_list = [int(x) for x in first_right.split()]
-    first_left_list = [int(x) for x in first_left.split()]
-    second_right_list = [int(x) for x in second_right.split()]
-    second_left_list = [int(x) for x in second_left.split()]
-    first = {"right": sum(first_right_list), "left": sum(first_left_list)}
-    second = {"right": sum(second_right_list), "left": sum(second_left_list)}
+def ball_game(home_first, away_first, home_second, away_second):
+    home_first_score = [int(x) for x in home_first.split()]
+    away_first_score = [int(x) for x in away_first.split()]
+    home_second_score = [int(x) for x in home_second.split()]
+    away_second_score = [int(x) for x in away_second.split()]
+    home = {"home": sum(home_first_score), "away": sum(away_first_score)}
+    away = {"home": sum(home_second_score), "away": sum(away_second_score)}
 
-    if first["right"] > first["left"] and second["right"] > second["left"]:
+    if home["home"] > home["away"] and away["home"] > away["away"]:
         res = "Win"
-    elif first["right"] < first["left"] and second["right"] < second["left"]:
+    elif home["home"] < home["away"] and away["home"] < away["away"]:
         res = "Lose"
     else:
         res = "Tie"
 
-    print(f'{first["right"]}:{first["left"]}')
-    print(f'{second["right"]}:{second["left"]}')
+    print(f'{home["home"]}:{home["away"]}')
+    print(f'{away["home"]}:{away["away"]}')
     print(res)
 
 
-test(input(), input(), input(), input())
+ball_game(input(), input(), input(), input())

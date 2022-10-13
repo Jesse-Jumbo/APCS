@@ -2,13 +2,11 @@
 https://zerojudge.tw/ShowProblem?problemid=c294
 原題pdf檔 https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnx6c2dpdGl0aXR8Z3g6NTRkNzUxYTBkMmNjYTZmOA
 """
+import sys
 
 
 def test(three_number):
-    numbers_list = []
-    list = three_number.split()
-    for i in list:
-        numbers_list.append(int(i))
+    numbers_list = list(map(int, three_number.split()))
     numbers_list.sort()
     a = numbers_list[0]
     b = numbers_list[1]
@@ -22,8 +20,8 @@ def test(three_number):
     elif a * a + b * b > c * c:
         res = "Acute"
 
-    print(a, b,  c)
+    print(a, b, c)
     print(res)
 
-numbers = "4 5 6"
-test(numbers)
+
+test(sys.stdin.readline())
