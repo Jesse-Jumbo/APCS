@@ -1,0 +1,1 @@
+print(*list(map(ord, input())), sep="_", end="")
